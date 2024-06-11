@@ -1,8 +1,8 @@
-let availableNumbers = [1, 2, 3, 4, 5,6,7,8];
-let pickedNumbers = [];
+const availableNumbers = [1, 2, 3, 4, 5,6,7,8];
+const pickedNumbers = [];
 
 export function getAvailableNumbers() {
-    return availableNumbers;
+    return [1, 2, 3, 4, 5];
 };
 
 
