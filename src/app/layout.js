@@ -17,9 +17,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    
       <html lang='en'>
         <body>
+        <ClerkProvider>
           <SignedOut>
             <SignInButton />
           </SignedOut>
@@ -27,8 +28,9 @@ export default function RootLayout({ children }) {
             <UserButton />
           </SignedIn>
           {children}
+        </ClerkProvider>
         </body>
       </html>
-    </ClerkProvider>
+    
   );
 }
