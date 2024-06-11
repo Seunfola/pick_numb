@@ -37,7 +37,7 @@ const NumberPicker = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 bg-gray-900 text-white">
       <h1 className="text-2xl font-bold mb-4">Pick a Number</h1>
       {pickedNumber ? (
         <div className="mb-4">You have picked number: {pickedNumber}</div>
@@ -47,6 +47,7 @@ const NumberPicker = () => {
       <AvailableNumbers numbers={availableNumbers} />
       {error && <div className="text-red-500 mt-2">{error}</div>}
     </div>
+
   );
 };
 

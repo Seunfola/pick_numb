@@ -15,22 +15,20 @@ const Dashboard = () => {
     }
 
     return (
-        <div className="container mx-auto p-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="bg-white p-4 rounded-lg shadow-md">
+        <div className="container mx-auto p-8 bg-gray-900 text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-gray-800 p-6 rounded-lg shadow-md">
                     <h2 className="text-lg font-semibold mb-4">User Information</h2>
-                    <p>Name: {user.fullName}</p>
-                    <p>Email: {user.email}</p>
-                  
+                    <p className="mb-2">
+                        <span className="font-semibold">Name:</span> {user.fullName}
+                    </p>
+                    <p className="mb-2">
+                        <span className="font-semibold">Email:</span> {user.email}
+                    </p>
                 </div>
-                <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="bg-gray-800 p-6 rounded-lg shadow-md">
                     <h2 className="text-lg font-semibold mb-4">Number Picker</h2>
                     <NumberPicker />
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-md">
-                    <h2 className="text-lg font-semibold mb-4">Statistics</h2>
-                    <p>Display statistics or charts here...</p>
-                   
                 </div>
             </div>
         </div>
