@@ -1,24 +1,39 @@
-'use client'; 
+'use client';
+
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useUser } from '@clerk/nextjs';
-import LoginButton from './components/LoginButton';
+import { useUser } from "@clerk/nextjs";
 
 export default function Home() {
-  const { isSignedIn } = useUser();
+  const { isLoaded, isSignedIn, user } = useUser();
   const router = useRouter();
 
   useEffect(() => {
-    if (isSignedIn) {
-      router.push('/dashboard');
+    if (isLoaded) {
+      if (isSignedIn) {
+        router.push('/dashboard');
+      } else {
+        router.push('/sign-in');
+      }
     }
-  }, [isSignedIn, router]);
+  }, [isLoaded, isSignedIn, router]);
+
+  if (!isLoaded) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <p className="text-xl font-bold">Loading...</p>
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
+    return null;
+  }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="flex justify-center items-center h-screen">
-        {!isSignedIn && <LoginButton />}
-      </div>
-    </main>
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
+      <h1 className="text-3xl font-bold mb-4">Hello, {user.firstName}!</h1>
+      <p className="text-lg">Welcome, kindly screenshot your picked number.</p>
+    </div>
   );
 }

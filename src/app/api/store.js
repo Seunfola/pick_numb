@@ -1,10 +1,10 @@
-// app/api/numbers/store.js
-let availableNumbers = [1, 2, 3, 4, 5];
+let availableNumbers = [1, 2, 3, 4, 5,6,7,8];
 let pickedNumbers = [];
 
 export function getAvailableNumbers() {
     return availableNumbers;
-}
+};
+
 
 export function pickNumber(number) {
     if (availableNumbers.includes(number)) {
@@ -14,4 +14,4 @@ export function pickNumber(number) {
     } else {
         return { success: false, message: 'Number not available' };
     }
-}
+};
