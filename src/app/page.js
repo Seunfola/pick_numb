@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
       <h1 className="text-3xl font-bold mb-4">Hello, {user.firstName}!</h1>
-      <p className="text-lg">Welcome, kindly screenshot your picked number.</p>
+      <p className="text-lg p-4">Welcome, kindly screenshot your picked number.</p>
     </div>
   );
 }
