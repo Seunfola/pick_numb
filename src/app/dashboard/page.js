@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
-import NumberPicker from '../components/NumberPicker';
+import NumberPicker from './_components/NumberPicker';
 
 const Dashboard = () => {
     const router = useRouter();

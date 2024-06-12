@@ -1,6 +1,6 @@
-import { getAvailableNumbers } from "../../../../store";
 import { NextResponse } from 'next/server';
 import { currentUser, auth } from "@clerk/nextjs/server";
+import { getAvailableNumbers } from '../../../store/store';
 
 export async function GET() {
     try {

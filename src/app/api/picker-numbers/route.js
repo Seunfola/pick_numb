@@ -1,4 +1,4 @@
-import { pickNumber } from "../store";
+import { pickNumber } from "../../../store/store";
 import { NextResponse } from 'next/server';
 import { auth, currentUser } from "@clerk/nextjs/server";
 
