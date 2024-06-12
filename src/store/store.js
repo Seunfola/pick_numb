@@ -1,4 +1,4 @@
-let availableNumbers = [1, 2, 3, 4, 5];
+let availableNumbers = [1, 2, 3, 4,];
 
 const pickedNumbers = [];
 
