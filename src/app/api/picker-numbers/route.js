@@ -1,4 +1,4 @@
-import { pickNumber } from "../../../store/store";
+import { pickNumber, isNumberPickedByUser } from "../../../store/store";
 import { NextResponse } from 'next/server';
 import { auth, currentUser } from "@clerk/nextjs/server";
 
@@ -17,7 +17,14 @@ export async function POST(req) {
         }
 
         const { number } = await req.json();
-        const result = pickNumber(number);
+
+        const isPickedByUser = await isNumberPickedByUser(number, userId);
+
+        if (isPickedByUser) {
+            return NextResponse.json({ error: "Number already picked by the user" }, { status: 400 });
+        }
+
+        const result = pickNumber(number, userId);
 
         if (result.success) {
             return NextResponse.json(result, { status: 200 });

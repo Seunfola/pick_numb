@@ -40,9 +40,7 @@ const Dashboard = () => {
                         <p className="mb-2">
                             <span className="font-semibold">Name:</span> {user.fullName}
                         </p>
-                        <p className="mb-2">
-                            <span className="font-semibold">Email:</span> {user.email}
-                        </p>
+                       
                     </div>
                     <div className="bg-gray-800 p-6 rounded-lg shadow-md md:w-1/2">
                         <h2 className="text-lg font-semibold mb-4">Number Picker</h2>

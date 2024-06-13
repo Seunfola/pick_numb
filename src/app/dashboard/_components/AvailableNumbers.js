@@ -14,7 +14,6 @@ const AvailableNumbers = ({ numbers }) => {
                 </ul>
             )}
         </div>
-
     );
 };
 
